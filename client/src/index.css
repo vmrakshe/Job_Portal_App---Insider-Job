@@ -1,0 +1,23 @@
+
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap");
+@import "tailwindcss";
+
+*{
+    font-family: Outfit;
+}
+
+@layer base {
+    html{
+        scroll-behavior: smooth;
+    }
+}
+
+::-webkit-scrollbar{
+    display: none;
+}
+
+/* Add to your global CSS */
+html {
+  scroll-behavior: smooth;
+}
+/* added rich text or extra css style  */
