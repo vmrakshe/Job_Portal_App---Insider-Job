@@ -15,6 +15,7 @@ A fully functional **Job Listing and Job Searching platform** built with the **M
 
 ### 🧑‍💼 Recruiters Dashboard
 - 🪪 Login and Register (using jwt)
+-    Password reset by sending reset link to email
 - ➕ Post new job listings
 - 📋 View and manage existing job posts
 - ✅ Accept or ❌ Reject job applications
@@ -119,7 +120,7 @@ A fully functional **Job Listing and Job Searching platform** built with the **M
 
 Job Seekers(users) are authenticated using **[Clerk](https://clerk.dev)** – a developer-first authentication platform that provides pre-built and secure user sign-in and sign-up flows.
 
-Clerk handles:
+In general, Clerk  handles:
 
 - 📧 Email/password login
 - 🔗 Magic link sign-in
@@ -160,5 +161,40 @@ This project integrates **Clerk Webhooks** to automatically keep the application
   - Creating a corresponding user in your own MongoDB database
   - Updating stored user profile information
   - Deleting the user from your database if they are removed from Clerk
+  -  Environment variable used:
+
+```env
+CLERK_WEBHOOK_SECRET=your_clerk_webhook_signing_secret
+```
+
+---
+
+## 📧 Password Reset for Recruiters (Nodemailer)
+
+Recruiters can securely reset their password via a **reset link sent to their email** using **[Nodemailer(Email Transport)](https://nodemailer.com/)**.
+
+### 🔧 How It Works
+
+1. Recruiter requests a password reset by entering their registered email.
+2. The backend generates a **JWT-based reset token** with a short expiry (e.g., 15–30 mins).
+3. A password reset URL containing the token is emailed to the recruiter using Nodemailer.
+4. Recruiter clicks the link and is redirected to a frontend form to enter a new password.
+5. The token is validated, and the new password is securely saved.
+
+### Example Email Link
+
+```
+https://your-frontend.com/reset-password?token=<jwt-token>
+```
+
+### 🔐 Environment Variables for Nodemailer
+
+Add these to your `.env` file:
+
+```env
+MAIL_USER=your_email@gmail.com
+MAIL_PASS=your_email_app_password
+
+
    
 
