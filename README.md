@@ -46,5 +46,25 @@ A fully functional **Job Listing and Job Searching platform** built with the **M
 
 1. **Clone the Repository**
    ```bash
-   git clone https://github.com/your-username/job-portal.git
-   cd job-portal
+   https://github.com/vmrakshe/Job_Portal_App---Insider-Job.git
+   cd Job_Portal_App---Insider-Job
+   
+2. **Install Dependencies**
+   ```bash
+   # For both frontend and backend
+   npm install
+   
+3. **Set Environment Variables**
+   - Create a ```.env ``` file in the client and server directory and add required env variable
+
+4. **Run the App Locally**
+   ```bash
+   # For frontend 
+   cd client
+   npm start dev
+
+   # For backend 
+   cd server
+   npm run server
+   
+
