@@ -7,12 +7,14 @@ A fully functional **Job Listing and Job Searching platform** built with the **M
 ## 🚀 Features
 
 ### 👨‍💻 Job Seekers
+- 📃 Login and sign up through clerk authentication
 - 🔍 Search for job openings by title, location, or category
 - 📝 Apply to jobs directly from the portal
 - 📂 Upload and manage resume on user profile
 - 🔐 User Authentication via [Clerk](https://clerk.dev)
 
 ### 🧑‍💼 Recruiters Dashboard
+- 🪪 Login and Sign up (using jwt)
 - ➕ Post new job listings
 - 📋 View and manage existing job posts
 - ✅ Accept or ❌ Reject job applications
@@ -36,9 +38,11 @@ A fully functional **Job Listing and Job Searching platform** built with the **M
 | **Frontend** | React, Tailwind CSS |
 | **Backend** | Node.js, Express.js |
 | **Database** | MongoDB (Mongoose) |
-| **Authentication** | Clerk |
+| **Authentication** | Clerk (Job Seekers), JWT (Recruiters) |
 | **Monitoring** | Sentry |
 | **Deployment** | Vercel |
+| **File Storage** | Cloudinary (Images, PDFs) |
+
 
 ---
 
@@ -55,16 +59,24 @@ A fully functional **Job Listing and Job Searching platform** built with the **M
    npm install
    
 3. **Set Environment Variables**
-   - Create a ```.env ``` file in the client and server directory and add required env variable
+    - Create a ```.env ``` file in the client and server directory and add required env variable
 
 4. **Run the App Locally**
    ```bash
    # For frontend 
    cd client
-   npm start dev
+   npm run dev
 
    # For backend 
    cd server
    npm run server
+   
+5. **☁️ Cloudinary Integration**
+   
+   This app uses [Cloudinary](https://cloudinary.com/) for:
+
+   - 📸 Storing company logos/profile images.
+   - 📄 Uploading and accessing resume PDFs.
+   - The backend uses cloudinary and multer to handle secure file uploads. Uploaded files are stored in your Cloudinary media library and can be accessed via their        secure URLs.
    
 
